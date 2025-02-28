@@ -5,9 +5,8 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const ClientSWR = () => {
   const { data, error, isLoading } = useSWR("/api/blog", fetcher);
-  console.log(data, "test");
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="size-full bg-red-500 rounded-xl">Loading...</div>;
   if (error) return <div>Error: {error.message} </div>;
 
   return (

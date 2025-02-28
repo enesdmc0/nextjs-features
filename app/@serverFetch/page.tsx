@@ -8,6 +8,7 @@ interface Post {
 }
 
 const ServerFetch = async () => {
+  //await promise(1000);
   const data = await fetch("https://api.vercel.app/blog");
   const posts = (await data.json()) as Post[];
 
@@ -21,3 +22,7 @@ const ServerFetch = async () => {
 };
 
 export default ServerFetch;
+
+// const promise = (ms: number) => {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// };
