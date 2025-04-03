@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,18 +10,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://enesdmc.com"),
-  alternates: {
-    canonical: "/",
-  },
-  title: {
-    default: "Enes Demirci",
-    template: "%s | Enes Demirci",
-  },
-  description: "Frontend developer.",
-};
 
 export default function RootLayout({
   children,
