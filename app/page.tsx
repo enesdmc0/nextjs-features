@@ -1,7 +1,16 @@
-import React from "react";
+import {getTodos} from "@/lib/todos";
+import Todos from "@/components/todos";
 
-const Home = () => {
-  return <div>Home</div>;
-};
-
-export default Home;
+export default async function Home() {
+    const {todos = []} = await getTodos()
+  return (
+      <section className="py-20">
+          <div className="container md:max-w-2xl mx-auto">
+              <h1 className="mb-10 bg-gray-100 px-2 font-serif text-3xl font-bold">
+                  Todos
+              </h1>
+              <Todos todos={todos}/>
+      </div>
+      </section>
+  );
+}
